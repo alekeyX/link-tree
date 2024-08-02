@@ -1,0 +1,38 @@
+<article class="link-panel-container">
+  <section class="link-panel-header">
+    <label class="link-panel-title">{{title}}</label>
+
+    <label class="link-panel-description">{{description}}</label>
+  </section>
+
+  <section class="link-panel-new-link">
+    <button class="btn btn-secondary link-panel-new-link-button">
+      + Add new link
+    </button>
+  </section>
+
+  <section class="link-panel-item-list">
+    <section class="link-panel-item-list-empty"
+             *ngIf="false; else items">
+      <label class="link-panel-item-list-empty-title">{{letsStarted}}</label>
+
+      <label class="link-panel-item-list-empty-description">{{addNewLink}}</label>
+    </section>
+
+    <ng-template class="link-panel-new-items"
+                 #items>
+      <section class="link-panel-new-item">
+        <app-create-link></app-create-link>
+      </section>
+      <section class="link-panel-new-item">
+        <app-create-link></app-create-link>
+      </section>
+    </ng-template>
+  </section>
+
+  <section class="link-panel-footer">
+    <button class="btn btn-primary link-panel-save-button">
+      Save
+    </button>
+  </section>
+</article>

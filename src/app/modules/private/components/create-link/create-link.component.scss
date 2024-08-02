@@ -1,0 +1,33 @@
+.create-link-container {
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.create-link-header {
+  display: flex;
+  justify-content: space-between;
+  color: #737373;
+}
+
+.create-link-platform,
+.create-link-link {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+
+  & > label {
+    color: #737373;
+    margin-bottom: 10px;
+  }
+}
+
+.create-link-input {
+  background-color: #ffffff;
+  border: 2px solid #d9d9d9;
+  box-sizing: border-box;
+  border-radius: 10px;
+  height: 40px;
+  padding: 10px;
+}

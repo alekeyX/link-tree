@@ -1,0 +1,29 @@
+.private-container {
+  background-color: #fafafa;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 20px;
+  width: 100%;
+}
+
+.private-content {
+  display: flex;
+  gap: 20px;
+  height: calc(100% - 90px);
+  margin-top: 20px;
+  width: 100%;
+}
+
+.private-preview {
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 100%;
+  width: 40%;
+}
+
+.private-link-panel {
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 100%;
+  width: 60%;
+}

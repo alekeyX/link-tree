@@ -5,17 +5,40 @@
     <button class="btn">Remove</button>
   </section>
 
-  <section class="create-link-platform">
-    <label>Platform</label>
+  <form #linkForm="ngForm">
+    <section class="create-link-platform">
+      <label for="options">Platform</label>
 
-    <input class="input-reset create-link-input"
-           type="dropdown">
-  </section>
+      <select class="input-reset create-link-input"
+              id="options"
+              name="options"
+              ngModel
+              required
+              type="dropdown"
+              #options="ngModel">
+        <option *ngFor="let option of linkOptions"
+                [value]="option">{{option}}</option>
+      </select>
+    </section>
 
-  <section class="create-link-link">
-    <label>Link</label>
+    <section class="create-link-link">
+      <label for="link">Link</label>
 
-    <input class="input-reset create-link-input"
-           type="text">
-  </section>
+      <input class="input-reset create-link-input"
+             id="link"
+             name="link"
+             ngModel
+             required
+             type="text"
+             #link="ngModel"
+             [ngClass]="{'create-link-input-error' : (link.errors?.linkError || link.errors?.emptyError) && (link.touched || link.dirty)}"
+             appEmptyValidator
+             appLinkValidator/>
+      <div class="create-link-input-error-message"
+           *ngIf="link.invalid && (link.dirty || link.touched)">
+        <div *ngIf="link.errors?.emptyError">{{link.errors?.emptyError}}</div>
+        <div *ngIf="link.errors?.linkError">{{link.errors?.linkError}}</div>
+      </div>
+    </section>
+  </form>
 </article>

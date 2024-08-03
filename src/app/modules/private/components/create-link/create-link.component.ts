@@ -8,6 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class CreateLinkComponent implements OnInit {
 
   public itemNumber: number;
+  public linkOptions: string[] = ['GitHub', 'Youtube', 'LinkedIn', 'Facebook'];
 
   constructor() {
     this.itemNumber = 0;

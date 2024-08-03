@@ -16,6 +16,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+  position: relative;
 
   & > label {
     color: #737373;
@@ -30,4 +31,19 @@
   border-radius: 10px;
   height: 40px;
   padding: 10px;
+}
+
+.create-link-input-error {
+  border: 2px solid #ff3939;
+}
+
+.create-link-input-error-message {
+  position: absolute;
+  right: 20px;
+  top: 60%;
+  color: #ff3939;
+  padding: 2px 5px;
+  font-size: 14px;
+  pointer-events: none;
+  white-space: nowrap;
 }

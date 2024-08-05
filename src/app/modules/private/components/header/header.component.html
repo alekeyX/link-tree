@@ -2,11 +2,15 @@
   <div class="header-icon">CC</div>
 
   <section>
-    <button class="btn header-tab-option header-btn-option-active">
-      Links
+    <button class="btn header-tab-option"
+            [ngClass]="{'header-btn-option-active': linkTabActive}"
+            (click)="toggleLinkTab(true)">
+      LinkList
     </button>
 
-    <button class="btn header-tab-option">
+    <button class="btn header-tab-option"
+            [ngClass]="{'header-btn-option-active': !linkTabActive}"
+            (click)="toggleLinkTab(false)">
       Profile Details
     </button>
   </section>

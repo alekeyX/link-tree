@@ -1,24 +1,30 @@
 <article class="create-link-container">
   <section class="create-link-header">
-    <label>= Link #{{itemNumber}}</label>
+    <label>= Link #{{itemNumber + 1}}</label>
 
-    <button class="btn">Remove</button>
+    <button class="btn"
+            (click)="removeItem()">Remove
+    </button>
   </section>
 
-  <form #linkForm="ngForm">
+  <form #form="ngForm">
     <section class="create-link-platform">
       <label for="options">Platform</label>
 
       <select class="input-reset create-link-input"
               id="options"
               name="options"
-              ngModel
               required
               type="dropdown"
-              #options="ngModel">
-        <option *ngFor="let option of linkOptions"
+              [(ngModel)]="selectedPlatform"
+              (ngModelChange)="updateLinkData()"
+              #dropdown="ngModel">
+        <option class="create-link-input-option"
+                *ngFor="let option of linkOptions"
                 [value]="option">{{option}}</option>
       </select>
+
+      <div class="create-link-input-dropdown-icon">V</div>
     </section>
 
     <section class="create-link-link">
@@ -27,11 +33,12 @@
       <input class="input-reset create-link-input"
              id="link"
              name="link"
-             ngModel
              required
              type="text"
              #link="ngModel"
              [ngClass]="{'create-link-input-error' : (link.errors?.linkError || link.errors?.emptyError) && (link.touched || link.dirty)}"
+             [(ngModel)]="linkValue"
+             (blur)="updateLinkData()"
              appEmptyValidator
              appLinkValidator/>
       <div class="create-link-input-error-message"

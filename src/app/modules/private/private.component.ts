@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
   selector: 'app-private',
   templateUrl: './private.component.html',
-  styleUrls: ['./private.component.scss']
+  styleUrls: ['./private.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PrivateComponent implements OnInit {
+export class PrivateComponent {
+  public linkPanelTabEnable: boolean;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
+    this.linkPanelTabEnable = true;
   }
 
+
+  public linkPanelTab(value: boolean): void {
+    this.linkPanelTabEnable = value;
+  }
 }

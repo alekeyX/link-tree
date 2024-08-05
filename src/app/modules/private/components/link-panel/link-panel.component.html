@@ -6,32 +6,34 @@
   </section>
 
   <section class="link-panel-new-link">
-    <button class="btn btn-secondary link-panel-new-link-button">
+    <button class="btn btn-secondary link-panel-new-link-button"
+            (click)="addNewLink()">
       + Add new link
     </button>
   </section>
 
   <section class="link-panel-item-list">
     <section class="link-panel-item-list-empty"
-             *ngIf="false; else items">
+             *ngIf="!linkList.length; else items">
       <label class="link-panel-item-list-empty-title">{{letsStarted}}</label>
 
-      <label class="link-panel-item-list-empty-description">{{addNewLink}}</label>
+      <label class="link-panel-item-list-empty-description">{{addNewLinkLabel}}</label>
     </section>
 
     <ng-template class="link-panel-new-items"
                  #items>
-      <section class="link-panel-new-item">
-        <app-create-link></app-create-link>
-      </section>
-      <section class="link-panel-new-item">
-        <app-create-link></app-create-link>
+      <section class="link-panel-new-item"
+               *ngFor="let linkItem of linkList; let i = index">
+        <app-create-link [itemNumber]="i"
+                         [link]="linkItem"
+                         (linkData)="updateLinkList($event, i)"></app-create-link>
       </section>
     </ng-template>
   </section>
 
   <section class="link-panel-footer">
-    <button class="btn btn-primary link-panel-save-button">
+    <button class="btn btn-primary link-panel-save-button"
+            (click)="saveLinkList()">
       Save
     </button>
   </section>

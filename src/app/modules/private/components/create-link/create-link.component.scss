@@ -31,6 +31,26 @@
   border-radius: 10px;
   height: 40px;
   padding: 10px;
+  position: relative;
+
+  &:focus {
+    border: 1px solid #633cff;
+    box-shadow: 0 0 10px 0 #beadff;
+  }
+}
+
+.create-link-input-dropdown-icon {
+  position: absolute;
+  color: #633cff;
+  top: 60%;
+  right: 20px;
+  font-weight: bold;
+}
+
+.create-link-input-option {
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .create-link-input-error {

@@ -1,3 +1,37 @@
 <article class="preview-container">
-  preview
+  <section class="preview-phone">
+    <section class="preview-phone-content">
+      <section class="preview-profile">
+        <div class="preview-profile-avatar">
+          <img class="preview-profile-img"
+               *ngIf="!!profile"
+               [src]="profile.img">
+        </div>
+
+        <section class="preview-data">
+          <label class="preview-data-name"
+                 *ngIf="!!profile">{{profile.firstName | titlecase}} {{profile.lastName | titlecase}}</label>
+          <span class="preview-data-empty"
+                *ngIf="!profile"></span>
+
+          <label class="preview-data-email"
+                 *ngIf="!!profile">{{profile.email}}</label>
+          <span class="preview-data-empty-email"
+                *ngIf="!profile"></span>
+        </section>
+      </section>
+
+      <section class="preview-links">
+        <section class="preview-link preview-link-bg-{{link.platform | lowercase}}"
+                 *ngFor="let link of linkList"
+                 [ngClass]="{'preview-link-bg' : !!link.platform}">
+          <label class="preview-link-platform"
+                 *ngIf="!!link.platform">{{link.platform}}</label>
+
+          <span class="preview-link-platform"
+                *ngIf="!!link.platform">-></span>
+        </section>
+      </section>
+    </section>
+  </section>
 </article>

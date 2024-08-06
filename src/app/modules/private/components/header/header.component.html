@@ -5,12 +5,14 @@
     <button class="btn header-tab-option"
             [ngClass]="{'header-btn-option-active': linkTabActive}"
             (click)="toggleLinkTab(true)">
+      <i class="bi bi-link-45deg"></i>
       LinkList
     </button>
 
     <button class="btn header-tab-option"
             [ngClass]="{'header-btn-option-active': !linkTabActive}"
             (click)="toggleLinkTab(false)">
+      <i class="bi bi-person-circle"></i>
       Profile Details
     </button>
   </section>

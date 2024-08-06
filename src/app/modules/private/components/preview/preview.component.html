@@ -26,10 +26,15 @@
                  *ngFor="let link of linkList"
                  [ngClass]="{'preview-link-bg' : !!link.platform}">
           <label class="preview-link-platform"
-                 *ngIf="!!link.platform">{{link.platform}}</label>
+                 *ngIf="!!link.platform">
+            <i class="bi bi-{{link.platform | lowercase}}"></i>
+            {{link.platform}}
+          </label>
 
           <span class="preview-link-platform"
-                *ngIf="!!link.platform">-></span>
+                *ngIf="!!link.platform">
+            <i class="bi bi-arrow-right"></i>
+          </span>
         </section>
       </section>
     </section>

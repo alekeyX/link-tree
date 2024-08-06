@@ -21,10 +21,14 @@
               #dropdown="ngModel">
         <option class="create-link-input-option"
                 *ngFor="let option of linkOptions"
-                [value]="option">{{option}}</option>
+                [value]="option">
+          {{option}}
+        </option>
       </select>
 
-      <div class="create-link-input-dropdown-icon">V</div>
+      <div class="create-link-input-dropdown-icon">
+        <i class="bi bi-caret-down-fill"></i>
+      </div>
     </section>
 
     <section class="create-link-link">
